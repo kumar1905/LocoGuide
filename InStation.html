@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Station Navigation System</title>
+    <link rel="stylesheet" href="InStationStyle.css">
+    <style>
+        
+    </style>
+   
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Navigation For Railway Station Facilities</h1>
+        <nav>
+            <ul>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#facilities1">Facilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="map">
+           
+            <div id="mapid">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10774.2681771898!2d78.5285661!3d17.439586!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97e7d8bb5153:0xd5e4a9931c1d6582!2sSecunderabad%20Junction!5e1!3m2!1sen!2sin!4v1697564300000!5m2!1sen!2sin"
+                    width="1700" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+       
+        </section>
+        <section id="facilities">
+            <h2>Our Facilities</h2>
+            <button
+                onclick="window.location.href='https://www.google.com/maps/place/Secunderabad+Junction/@17.4337454,78.4970681,675m/data=!3m1!1e3!4m10!1m2!2m1!1splatform+secunderabad+railway+station!3m6!1s0x3bcb9a213de9c7b7:0x957c784f25ea95aa!8m2!3d17.4337454!4d78.5015742!15sCiVwbGF0Zm9ybSBzZWN1bmRlcmFiYWQgcmFpbHdheSBzdGF0aW9uWiciJXBsYXRmb3JtIHNlY3VuZGVyYWJhZCByYWlsd2F5IHN0YXRpb26SAQ10cmFpbl9zdGF0aW9umgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVVIxYVY5RE56VkJSUkFC4AEA!16s%2Fm%2F03c_c_1?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D'">Platform</button>
+            <button
+                onclick="window.location.href='https://www.google.com/maps/place/Secunderabad+General+And+MMTS+Ticket+Counter/@17.4340599,78.4840239,2700m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb9a21434c97c9:0x9bfa810603b5696e!8m2!3d17.4340403!4d78.502478!16s%2Fg%2F11f2dpz3md?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D'">Ticket Counter</button>
+            <button
+                onclick="window.location.href='https://www.google.com/maps/place/Toilets+Secunderabad+Railway+Station/@17.4339186,78.496264,675m/data=!3m1!1e3!4m10!1m2!2m1!1srestroom+near+Secunderabad+Railway+Station+Road,+Railway+Officer+Colony,+Botiguda,+Bhoiguda,+Secunderabad,+Telangana!3m6!1s0x3bcb9bf59b7ba8d7:0x57f2e7c6b1492d6d!8m2!3d17.4339549!4d78.5030188!15sCnRyZXN0cm9vbSBuZWFyIFNlY3VuZGVyYWJhZCBSYWlsd2F5IFN0YXRpb24gUm9hZCwgUmFpbHdheSBPZmZpY2VyIENvbG9ueSwgQm90aWd1ZGEsIEJob2lndWRhLCBTZWN1bmRlcmFiYWQsIFRlbGFuZ2FuYVpxIm9yZXN0cm9vbSBuZWFyIHNlY3VuZGVyYWJhZCByYWlsd2F5IHN0YXRpb24gcm9hZCByYWlsd2F5IG9mZmljZXIgY29sb255IGJvdGlndWRhIGJob2lndWRhIHNlY3VuZGVyYWJhZCB0ZWxhbmdhbmGSAQ9wdWJsaWNfYmF0aHJvb22aASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUmhlSEJETlY5blJSQULgAQA!16s%2Fg%2F11ff15bw_n?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D'">Restroom</button>
+            <button
+                onclick="window.location.href='https://www.google.com/maps/search/food+court+near+Secunderabad+Railway+Station+Road,+Railway+Officer+Colony,+Botiguda,+Bhoiguda,+Secunderabad,+Telangana/@17.433716,78.4994371,675m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D'">Food Court</button>
+                <button onclick="toggleFeedbackForm()">Feedback</button>
+
+                <div id="feedback-form">
+                    <h3>Give Your Feedback</h3>
+                    <label>How was your experience?</label>
+                    <input type="text" id="experience" placeholder="Describe your experience">
+                    
+                    <label>Five-Star Rating:</label>
+                    <select id="rating">
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+    
+                    <label>Suggestions:</label>
+                    <textarea id="suggestions" placeholder="Any suggestions?"></textarea>
+    
+                    <button onclick="submitFeedback()">Submit Feedback</button>
+                </div>
+    
+                <div id="feedback-list">
+                    <h3>Previous Feedbacks:</h3>
+                </div>
+            </section>
+   
+            </main>
+    <footer>
+        <p>&copy; 2024 Railway Station Navigation. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleFeedbackForm() {
+            let form = document.getElementById("feedback-form");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+
+        function submitFeedback() {
+            let experience = document.getElementById("experience").value;
+            let rating = document.getElementById("rating").value;
+            let suggestions = document.getElementById("suggestions").value;
+
+            if (!experience || !rating || !suggestions) {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            let feedbackList = document.getElementById("feedback-list");
+            let feedbackItem = document.createElement("div");
+            feedbackItem.className = "feedback-item";
+            feedbackItem.innerHTML = `<p><strong>Experience:</strong> ${experience}</p>
+                                      <p><strong>Rating:</strong> ${"⭐".repeat(rating)}</p>
+                                      <p><strong>Suggestions:</strong> ${suggestions}</p>`;
+            feedbackList.appendChild(feedbackItem);
+
+            document.getElementById("experience").value = "";
+            document.getElementById("rating").value = "5";
+            document.getElementById("suggestions").value = "";
+        }
+    </script>
+</body>
+</html>

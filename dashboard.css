@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FAF3E0;
+  color: black; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: white;
+  padding-right: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+/* logo image */
+#logoImg{
+  height: 80px;
+  width: 100px;
+}
+
+/* Logo */
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #FAF3E0; /* Cream */
+  border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+}
+
+#stationSearch {
+  border: none;
+  padding: 10px;
+  width: 600px;
+  outline: none;
+  color: black;
+  background: transparent;
+}
+
+#searchBtn {
+  background: #FAF3E0; /* Warm Orange */
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  background: #75AAF0; /* Muted Orange */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  position: relative;
+}
+
+#hamburgerBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #FAF3E0; /* Cream */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 150px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu button,
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  color: #75AAF0; /* Dark Brown */
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover,
+.dropdown-menu a:hover {
+  background: #296d98; /* Light Tan */
+}
+
+/* Options Nav */
+.options {
+  display: flex;
+  padding: 10px 20px;
+  background: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+}
+.options #InStation a{
+  text-decoration: none;
+  color: white;
+}
+.options button {
+  margin-right: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Main Container with Map + Station Info */
+main {
+  display: flex;
+}
+/* Map Container */
+#map {
+  width: 70%;
+  height: calc(100vh - 135px);
+  border: black solid 1px;
+}
+/* Station Info Container */
+.station-info {
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: calc(100vh - 200px);
+  background: #f2f2f2;
+}
+/* Facilities & Searching */
+.facility-item {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 4px;
+  align-items: center;
+}
+.facility-item:hover {
+  background: #e9ecef;
+}
+.navigate-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+/* Real-time Train Info Panel */
+.train-info {
+  background: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.train-info h3 {
+  margin-top: 0;
+}
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+}
+/* Leaflet Routing Panel customization (optional) */
+.leaflet-routing-container {
+  margin-top: 10px;
+}
+/* Dark Mode Toggle */
+.dark-mode {
+  background: #111;
+  color: #eee;
+}
+.dark-mode header,
+.dark-mode footer {
+  background: #111;
+}
+.dark-mode .mode-toggle {
+  background: #333;
+}

@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    color: black;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: #7ab6d0;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures equal height for child elements */
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Station Navigation Map (Extended to Match Facilities) */
+
+#map {
+    flex: 1; /* Fully occupies left side */
+    height: 100vh; /* Full height */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0; /* Remove any padding */
+    overflow: hidden; /* No extra spacing */
+}
+
+/* Map Frame */
+#map iframe {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Facilities Section */
+#facilities {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Feedback Form */
+#feedback-form {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Feedback Items */
+.feedback-item {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Button Styling */
+button {
+    background-color: #7ab6d0;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: larger;
+}
+#mapid{
+    width: 1500px;
+}
+
+button:hover {
+    background-color: #5a9cb0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #map, #facilities, #feedback-form {
+        width: 100%;
+        max-width: 600px;
+        min-height: auto;
+    }
+
+
+}
