@@ -1,5 +1,4 @@
 
-
 document.getElementById("hamburgerBtn").addEventListener("click", function() {
     document.querySelector(".dropdown-menu").classList.toggle("show");
 });
@@ -26,32 +25,58 @@ window.onclick = function(event) {
     let routePanel;
     let currentStation = null; // holds current station data
 
+    // function initMap() {
+    //   // Default location from the provided link: lat=17.4495, lon=78.4672 and zoom level ~12
+    //   const defaultLatLng = [17.4495, 78.4672];
+    //   map = L.map('map').setView(defaultLatLng, 12);
+
+    //   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     attribution: 'Leaflet &copy; OpenStreetMap contributors',
+    //     maxZoom: 18
+    //   }).addTo(map);
+
+    //   userMarker = L.marker(defaultLatLng).addTo(map);
+
+    //   routingControl = L.Routing.control({
+    //     routeWhileDragging: false,
+    //     showAlternatives: false,
+    //     addWaypoints: false,
+    //     lineOptions: { styles: [{ color: '#007bff', opacity: 1, weight: 5 }] },
+    //     createMarker: function() { return null; }
+    //   }).on('routesfound', function(e) {
+    //     const summary = e.routes[0].summary;
+    //     document.getElementById('distance').innerHTML = (summary.totalDistance / 1000).toFixed(2) + ' km';
+    //     document.getElementById('time').innerHTML = (summary.totalTime / 60).toFixed(2) + ' minutes';
+    //   }).addTo(map);
+
+    //   routePanel = document.getElementsByClassName('leaflet-routing-container')[0];
+    // }
     function initMap() {
-      // Default location from the provided link: lat=17.4495, lon=78.4672 and zoom level ~12
+      // Default location: Hyderabad, India
       const defaultLatLng = [17.4495, 78.4672];
+  
       map = L.map('map').setView(defaultLatLng, 12);
-
+  
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Leaflet &copy; OpenStreetMap contributors',
-        maxZoom: 18
+          attribution: 'Leaflet &copy; OpenStreetMap contributors',
+          maxZoom: 18
       }).addTo(map);
-
+  
       userMarker = L.marker(defaultLatLng).addTo(map);
-
+  
+      // Add Routing Control with Waypoints
       routingControl = L.Routing.control({
-        routeWhileDragging: false,
-        showAlternatives: false,
-        addWaypoints: false,
-        lineOptions: { styles: [{ color: '#007bff', opacity: 1, weight: 5 }] },
-        createMarker: function() { return null; }
-      }).on('routesfound', function(e) {
-        const summary = e.routes[0].summary;
-        document.getElementById('distance').innerHTML = (summary.totalDistance / 1000).toFixed(2) + ' km';
-        document.getElementById('time').innerHTML = (summary.totalTime / 60).toFixed(2) + ' minutes';
+          waypoints: [
+              L.latLng(17.4495, 78.4672), // Starting Point (Hyderabad)
+              L.latLng(17.3850, 78.4867)  // Destination Point (Random Location)
+          ],
+          routeWhileDragging: true,
+          showAlternatives: true,
+          addWaypoints: true,
+          lineOptions: { styles: [{ color: '#007bff', opacity: 1, weight: 5 }] }
       }).addTo(map);
-
-      routePanel = document.getElementsByClassName('leaflet-routing-container')[0];
-    }
+  }
+  
 
     function searchStation() {
         let query = document.getElementById('stationSearch').value.trim();
