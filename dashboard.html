@@ -6,12 +6,13 @@
   <title>Enhanced Railway Navigation Dashboard</title>
 
   <!-- Leaflet CSS & Leaflet Routing Machine CSS -->
-   <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
-
+  
+  <!-- Add your chat module styles here -->
+  
 </head>
 <body>
   <header>
@@ -19,27 +20,26 @@
       <img src="logo.png" alt="Logo" id="logoImg">
     </div>
     <div class="logo">
-        <h1>LocoGuide</h1>
+      <h1>LocoGuide</h1>
     </div>
     <div class="search-container">
-        <input type="text" id="stationSearch" placeholder="Search station" />
-        <button id="searchBtn" type="submit"><i class="fas fa-search"></i></button>
+      <input type="text" id="stationSearch" placeholder="Search station" />
+      <button id="searchBtn" type="submit"><i class="fas fa-search"></i></button>
+      <!-- Chat toggle button in navbar -->
+      <button id="chatToggle" class="chat-toggle"><i class="fas fa-comments"></i></button>
     </div>
     <div class="hamburger-menu">
-        <button id="hamburgerBtn"><i class="fas fa-bars"></i></button>
-        <div class="dropdown-menu">
-            <button id="modeToggle"><i class="fas fa-moon"></i> Dark Mode</button>
-            <a href="#">About</a>
-            <a href="#">Logout</a>
-        </div>
+      <button id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+      <div class="dropdown-menu">
+        <button id="modeToggle"><i class="fas fa-moon"></i> Dark Mode</button>
+        <a href="index.html">Logout</a>
+      </div>
     </div>
-</header>
-
+  </header>
 
   <!-- Options Nav -->
   <nav class="options">
     <button id="startNavigation"><i class="fas fa-map-signs"></i> AR Navigation</button>
-    <!-- <button id="setAlarm"><i class="fas fa-bell"></i> Set Alarm</button> -->
     <button id="InStation"><a href="InStation.html">In-Station</a></button>
   </nav>
 
@@ -50,31 +50,39 @@
 
     <!-- Station Info Section -->
     <section class="station-info">
-      <!-- Station details + nearby facilities -->
       <div id="stationDetails" style="display: none;">
         <h2 id="stationNameHeading"></h2>
         <p id="stationDescription"></p>
-        <!-- Button to refresh real-time train info -->
         <button id="refreshTrainInfo" style="margin-bottom:10px;">Refresh Train Info</button>
-        <!-- Real-time Train Info Panel -->
         <div id="trainInfo" class="train-info" style="display: none;">
           <h3>Real-Time Train Info</h3>
-          <div id="trainInfoContent">
-            <!-- Dynamic train info will be inserted here -->
-          </div>
+          <div id="trainInfoContent"></div>
         </div>
         <div id="nearbyFacilities" style="display: none;">
           <h3>Nearby Coffee Shops & Food Courts:</h3>
-          <!-- Facility items injected here -->
         </div>
       </div>
-
     </section>
   </main>
+
+  <!-- Chat Module -->
+  <div class="chat-module" id="chatModule">
+    <div class="chat-header">
+      <span>Chat Assistant</span>
+      <button id="chatClose" style="background: none;border: none;color: #fff;font-size:1.2em;cursor:pointer;"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <!-- Chat messages will appear here -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Ask about station details, facilities, etc." />
+      <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
   <!-- Leaflet JS & Leaflet Routing Machine JS -->
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
   <script src="dashboard.js"></script>
-
 </body>
 </html>
